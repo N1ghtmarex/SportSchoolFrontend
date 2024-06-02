@@ -1,9 +1,9 @@
 import {
   index
-} from "./chunk-H7IXKEA6.js";
+} from "./chunk-CWPTGOPH.js";
 import {
   index as index2
-} from "./chunk-CWPTGOPH.js";
+} from "./chunk-H7IXKEA6.js";
 import {
   DayTableSlicer,
   TableDateProfileGenerator,
@@ -2483,7 +2483,7 @@ var index5 = createPlugin({
 });
 
 // node_modules/fullcalendar/index.js
-globalPlugins.push(index3, index, index2, index4, index5);
+globalPlugins.push(index3, index2, index, index4, index5);
 export {
   Calendar,
   ExternalDraggable as Draggable,

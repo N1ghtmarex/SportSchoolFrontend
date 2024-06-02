@@ -19,12 +19,7 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(),
     provideAnimationsAsync(),
     KeycloakService,
-    {
-      provide: APP_INITIALIZER,
-      useFactory: initializeKeycloak,
-      multi: true,
-      deps: [KeycloakService],
-    },
+    
     {
       provide: HTTP_INTERCEPTORS,
       useClass: KeycloakBearerInterceptor,
