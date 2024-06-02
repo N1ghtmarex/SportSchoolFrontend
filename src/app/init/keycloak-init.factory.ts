@@ -4,7 +4,7 @@ export function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
     keycloak.init({
       config: {
-        url: 'http://localhost:8080',
+        url: 'http://158.160.130.4:8080',
         realm: 'SportSchool',
         clientId: 'SwaggerClient',
       },
