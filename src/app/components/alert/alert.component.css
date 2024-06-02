@@ -1,0 +1,87 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: #101010;
+  }
+  
+  .window{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    background-color: #202020;
+    margin: auto;
+    min-height: 150px;
+    margin-top: 5%;
+    width: 300px; 
+  }
+  
+  .window .item-form{
+    margin-top: 20px;
+  }
+  
+  .window h1{
+    padding: 5px 10px;
+    color: white;
+  }
+  
+  .window .line{
+    height: 1px;
+    width: 100%;
+    background-color: #7400FF;
+  }
+  
+  .window label{
+    font-weight: 600;
+    color: white;
+  }
+  
+  .window form{
+    padding: 0 20px;
+  }
+  
+  .window .message-area{
+    width: 100%;
+  }
+  
+  input[type="text"]{
+    background: transparent;
+    border: none;
+    height: 25px;
+    margin-left: 10px;
+    color: white;
+  }
+  
+  textarea{
+    margin-top: 5px;
+    background: transparent;
+    border: none;
+    color: white;
+    max-height: 150px;
+    min-height: 150px;
+    max-width: 100%;
+    min-width: 100%;
+  }
+  
+  .window .close-button{
+    background-color: transparent;
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #7400FF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color: white;
+    text-align:center;
+    margin-top: 15px;
+  }
+  
+  .window .close-button:hover{
+    border: 0.1em solid #7400FF;
+    background-color: #7400FF;
+  }
+
+  .message-form {
+    color: white;
+  }

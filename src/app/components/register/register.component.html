@@ -1,0 +1,51 @@
+<div class="form_wrapper">
+    <div class="form_container">
+      <div class="title_container">
+        <h2>Responsive Registration Form</h2>
+      </div>
+      <div class="row clearfix">
+        <div class="">
+          <form>
+            <div class="avatar-upload">
+              <div class="avatar-edit">
+                  <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" (change)="initImage($event)"/>
+                  <label for="imageUpload"></label>
+              </div>
+              <div class="avatar-preview">
+                  <div id="imagePreview" style="background-image: url(https://www.bearing-spb.ru/cache/nophoto.6e5f614a.jpg);">
+                  </div>
+              </div>
+            </div>
+            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+              <input type="email" name="email" placeholder="Email" required [(ngModel)]="email"/>
+            </div>
+            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+              <input type="password" name="password" placeholder="Password" [(ngModel)]="password" required />
+            </div>
+            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+              <input type="password" name="password" placeholder="Re-type Password" [(ngModel)]="retypePassword" required />
+            </div>
+            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-phone"></i></span>
+                <input type="text" prefix="+7" mask="(000) 000-00-00" [showMaskTyped]="true" class="phone" id="phone" name="phone" placeHolderCharacter="*" [(ngModel)]="phone" required />
+            </div>
+            <div class="row clearfix">
+              <div class="col_half">
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                  <input type="text" name="name" placeholder="First Name" [(ngModel)]="name" required/>
+                </div>
+              </div>
+              <div class="col_half">
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                  <input type="text" name="name" placeholder="Last Name" [(ngModel)]="surname" required />
+                </div>
+              </div>
+            </div>
+                  
+              
+              
+            <input class="button" type="submit" value="Register" (click)="register()"/>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

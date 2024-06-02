@@ -1,0 +1,140 @@
+.link {
+    cursor: pointer;
+    user-select: none;
+    font-size: 300%;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.banner {
+    position: relative;
+    margin-top: -1px;
+}
+
+
+
+.about {
+    margin-left: 500px;
+    margin-right: 50px;
+}
+
+.phone {
+    margin-left: 500px;
+}
+
+.text-container {
+    position: absolute;
+    left: 960px;
+    top: 304px;
+    color: white;
+}
+
+.text-container .header {
+    font-size: 72pt;
+}
+
+.text-container .body {
+    margin-top: 170px;
+    font-size: 36pt;
+}
+
+.register,
+.login {
+    position: absolute;
+    background-color: #BE1D1D;
+    color: white;
+    height: 75px;
+    padding: 0 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24pt;
+}
+
+.register:hover,
+.login:hover {
+    background-color: #3A3A3A;
+}
+
+.login {
+    margin-left: 350px;
+}
+
+.banner-button {
+    position: absolute;
+    left: 960px;
+    top: 644px;
+}
+
+
+
+.adv-header {
+    margin-top: 125px;
+    font-size: 50px;
+    text-align: center;
+}
+
+.advantages {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.advantages .content {
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 250px;
+    text-align: center;
+}
+
+.advantages .vertical-line {
+    border-left: 1px solid #988484;
+    height: 245px;
+    opacity: 50%;
+}
+
+.trainers-header {
+    margin-top: 125px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.trainers {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.trainers .img {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+swiper-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 910px;
+    margin-top: 50px;
+}
+
+.coach-image {
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+.header-container {
+    background-color: blue;
+}
+
+

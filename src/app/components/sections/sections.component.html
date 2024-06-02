@@ -1,0 +1,77 @@
+
+<div class="cards">
+    <ng-container *ngIf="eventType=='section'">
+        <div class="card" *ngFor="let section of sections" routerLink="/section/{{section.id}}">
+            <div class="card-image">
+                <img class="card-image" src="http://localhost:5092/sections/{{section.id}}.jpeg">
+            </div>
+            <div class="category"> Секция </div>
+            <div class="heading"> {{section.name}}
+                <div class="coach"> тренер <span class="name">{{section.coach.name}} {{section.coach.surname}}</span></div>
+            </div>
+        </div>    
+    </ng-container>
+
+    <ng-container *ngIf="eventType=='individual'">
+        <div class="card" *ngFor="let event of individualEvents" routerLink="/individual/{{event.id}}">
+            <div class="card-image">
+                <img class="card-image" src="/assets/images/sections/2.jpg">
+            </div>
+            <div class="category"> Индивидуальное занятие </div>
+            <div class="heading"> {{event.sport.name}}
+                <div class="coach"> тренер <span class="name">{{event.coach.name}} {{event.coach.surname}}</span></div>
+            </div>
+        </div>   
+    </ng-container> 
+</div>
+
+<div class="sidebar">
+    <form>
+      <div class="field">
+        <label>Поиск</label>
+        <input type="text" name="length" class="input" [(ngModel)]="search" (input)="paginate(1)">
+      </div>
+      <div class="field">
+        <label>Тип занятия</label>
+        <label>
+          <input type="radio" value="section" name="event-type" (click)="filterType('section')" checked> Секция
+        </label>
+        <label>
+          <input type="radio" value="individual" name="event-type" (click)="filterType('individual')"> Индивидуальное
+        </label>
+      </div>
+      <div class="field">
+        <label>Статус</label>
+        <label>
+          <input type="radio" value="Все" name="status" (click)="filterStatus('all')" checked> Все
+        </label>
+        <label>
+          <input type="radio" value="Мои" name="status" (click)="filterStatus('my')"> Мои
+        </label>
+      </div>
+      <div class="field">
+          <mat-label>Вид спорта</mat-label>
+          <mat-select name="sport" [value]="'не выбрано'">
+              <mat-option (click)="filterSport('')" [value]="'не выбрано'">Не выбрано</mat-option>
+              <mat-option *ngFor="let sport of sports" [value]="sport.name" (click)="filterSport(sport.id)">
+                  {{sport.name}}
+              </mat-option>
+          </mat-select>
+      </div>
+    </form>
+  </div>
+
+
+
+
+
+
+
+
+  <div class="pagination">
+    <a *ngIf="previousPage" routerLink="/sections/page/{{previousPage}}" (click)="paginate('prev')">&laquo;</a>
+    <a *ngIf="page != 1" routerLink="/sections/page/1" (click)="paginate(1)">1</a>
+    <a class="active">{{page}}</a>
+    <a *ngIf="nextPage" routerLink="/sections/page/{{nextPage}}" (click)="paginate(nextPage)">{{nextPage}}</a>
+    <a *ngIf="nextPage" routerLink="/sections/page/{{nextPage}}" (click)="paginate('next')">&raquo;</a>
+  </div>

@@ -1,0 +1,111 @@
+<h2>Выберите тип занятия</h2>
+<div class="switch-field">
+    <input type="radio" id="radio-one" name="switch-one" value="Секция" checked (click)="filter='section'"/>
+    <label for="radio-one">Секция</label>
+    <input type="radio" id="radio-two" name="switch-one" value="Индивидуальное" (click)="filter='ind'"/>
+    <label for="radio-two">Индивидуальное</label>
+</div>
+
+<div class="section-block" *ngIf="filter=='section'">
+    <div class="field">
+        <mat-form-field>
+            <mat-label>Выберите секцию</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let section of sections" [value]="section.name" (click)="sectionId = section.id">
+                    {{section.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="field">
+        <mat-form-field>
+            <mat-label>День недели</mat-label>
+            <mat-select>
+                <mat-option [value]="'Понедельник'" (click)="dayOfWeek = 1">Понедельник</mat-option>
+                <mat-option [value]="'Вторник'" (click)="dayOfWeek = 2">Вторник</mat-option>
+                <mat-option [value]="'Среда'" (click)="dayOfWeek = 3">Среда</mat-option>
+                <mat-option [value]="'Четверг'" (click)="dayOfWeek = 4">Четверг</mat-option>
+                <mat-option [value]="'Пятница'" (click)="dayOfWeek = 5">Пятница</mat-option>
+                <mat-option [value]="'Суббота'" (click)="dayOfWeek = 6">Суббота</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="field">
+        <mat-form-field>
+            <mat-label>Время начала</mat-label>
+            <input matInput mask="Hh:m0" [showMaskTyped]="true" placeHolderCharacter="-" [leadZeroDateTime]="true"  [(ngModel)]="startTime" [dropSpecialCharacters]="false">
+        </mat-form-field>
+    </div>
+
+    <div class="field">
+        <mat-form-field>
+            <mat-label>Время окончания</mat-label>
+            <input matInput mask="Hh:m0" [showMaskTyped]="true" placeHolderCharacter="-" [leadZeroDateTime]="true"  [(ngModel)]="endTime" [dropSpecialCharacters]="false">
+        </mat-form-field>
+    </div>
+
+    <div class="field">
+        <mat-form-field>
+            <mat-label>Период проведения</mat-label>
+            <input type="text" matInput mask="d0-M0-0000" [showMaskTyped]="true" placeHolderCharacter="дд-мм-гггг" [leadZeroDateTime]="true"  [(ngModel)]="period" [dropSpecialCharacters]="false">
+        </mat-form-field>
+    </div>
+
+    <div class="btn">
+        <button mat-raised-button color="primary" (click)="addSectionEvent()">Добавить</button>
+    </div>
+</div>
+
+
+
+    <div *ngIf="filter == 'ind'" id="ind" class="ind">
+        <div class="field">
+            <mat-form-field>
+                <mat-label>Выберите вид спорта</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let sport of sports" [value]="sport.name" (click)="sportId = sport.id">
+                        {{sport.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="field">
+            <mat-form-field>
+                <mat-label>Выберите зал</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let room of rooms" [value]="room.name" (click)="roomId = room.id">
+                        {{room.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="field">
+            <mat-form-field>
+                <mat-label>Дата проведения</mat-label>
+                <input type="text" matInput mask="d0-M0-0000" [showMaskTyped]="true" placeHolderCharacter="дд-мм-гггг" [leadZeroDateTime]="true"  [(ngModel)]="startDateOnly" [dropSpecialCharacters]="false">
+            </mat-form-field>
+        </div>
+
+        <div class="field">
+            <mat-form-field>
+                <mat-label>Время начала</mat-label>
+                <input matInput mask="Hh:m0" [showMaskTyped]="true" placeHolderCharacter="-" [leadZeroDateTime]="true"  [(ngModel)]="startTimeOnly" [dropSpecialCharacters]="false">
+            </mat-form-field>
+        </div>
+    
+        <div class="field">
+            <mat-form-field>
+                <mat-label>Время окончания(продолжительность)</mat-label>
+                <input matInput mask="Hh:m0" [showMaskTyped]="true" placeHolderCharacter="-" [leadZeroDateTime]="true"  [(ngModel)]="duration" [dropSpecialCharacters]="false">
+            </mat-form-field>
+        </div>
+
+        <div class="btn">
+            <button mat-raised-button color="primary" *ngIf="filter=='ind'" (click)="addIndividualEvent()">Добавить</button>
+        </div>
+    </div>
+
+    

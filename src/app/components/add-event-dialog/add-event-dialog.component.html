@@ -1,0 +1,84 @@
+<fieldset class="choose-event">
+    <legend>Выберите тип занятия:</legend>
+    <div>
+      <input type="radio" id="Секция" name="event" value="Секция" checked (click)="filter='section'">
+      <label for="Секция">Секция</label>
+    </div>
+    <div>
+        <input type="radio" id="Индивидуальное" name="event" value="Индивидуальное" (click)="filter='ind'">
+        <label for="Индивидуальное">Индивидуальное</label>
+      </div>
+</fieldset>
+
+<div *ngIf="filter == 'section'" id="section" class="section">
+
+    <div class="field">
+        <mat-form-field style="width: 220px;">
+            <mat-label>Выберите секцию</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let section of sections" [value]="section.name" (click)="sectionId = section.id">
+                    {{section.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    
+    <div class="field">
+        <mat-form-field style="width: 220px;">
+            <mat-label>День недели</mat-label>
+            <mat-select>
+                <mat-option [value]="'Понедельник'" (click)="dayOfWeek = 1">Понедельник</mat-option>
+                <mat-option [value]="'Вторник'" (click)="dayOfWeek = 2">Вторник</mat-option>
+                <mat-option [value]="'Среда'" (click)="dayOfWeek = 3">Среда</mat-option>
+                <mat-option [value]="'Четверг'" (click)="dayOfWeek = 4">Четверг</mat-option>
+                <mat-option [value]="'Пятница'" (click)="dayOfWeek = 5">Пятница</mat-option>
+                <mat-option [value]="'Суббота'" (click)="dayOfWeek = 6">Суббота</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <label>Время начала:</label>
+    <input type="time" [(ngModel)]="startTime">
+    
+    <label>Время окончания:</label>
+    <input type="time" [(ngModel)]="endTime">
+    
+    <label>Период проведения:</label>
+    <input type="date" [(ngModel)]="period">
+</div>
+
+<div *ngIf="filter == 'ind'" id="ind" class="ind">
+    <div class="field">
+        <mat-form-field style="width: 220px;">
+            <mat-label>Выберите вид спорта</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let sport of sports" [value]="sport.name" (click)="sportId = sport.id">
+                    {{sport.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="field">
+        <mat-form-field style="width: 220px;">
+            <mat-label>Выберите зал</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let room of rooms" [value]="room.name" (click)="roomId = room.id">
+                    {{room.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    
+    <label>Дата:</label>
+    <input type="date" [(ngModel)]="startDateOnly">
+    
+    <label>Время начала:</label>
+    <input type="time" [(ngModel)]="startTimeOnly">
+    
+    <label>Продолжительность:</label>
+    <input type="time" [(ngModel)]="duration">
+</div>
+
+<button *ngIf="filter=='section'" (click)="addSectionEvent()">Добавить занятие секции</button>
+<button *ngIf="filter=='ind'" (click)="addIndividualEvent()">Добавить индивидуальное занятие</button>

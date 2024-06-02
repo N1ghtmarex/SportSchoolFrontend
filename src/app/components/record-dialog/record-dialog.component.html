@@ -1,0 +1,15 @@
+<h2 class="title" mat-dialog-title>Информация о событии</h2>
+<mat-dialog-content class="mat-typography">
+  
+    <div>
+        <h3>{{data.event.extendedProps.title}}</h3>
+        <h3>Начало: {{data.event.extendedProps.startTime}} <br>Конец: {{data.event.extendedProps.endTime}} </h3>
+        <h3>Вид спорта: {{data.event.extendedProps.sport}}</h3>
+        <h3>Зал: {{data.event.extendedProps.room}}</h3>
+        <h3>Тренер: {{data.event.extendedProps.coach.name}} {{data.event.extendedProps.coach.surname}}</h3>
+        <h3>Телефон тренера: +7{{data.event.extendedProps.coach.phone}}</h3>
+        <button class="btn btn-primary" *ngIf="role=='Coach'" (click)="deleteEvent(data.event.extendedProps.type, data.event.extendedProps.id)">Удалить</button>
+    </div>
+
+  
+</mat-dialog-content>

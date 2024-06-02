@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="section-image">
+      <img src="http://localhost:5092/individual/2.jpeg" alt="" class="section-pic">
+    </div>
+    
+    <div class="section-details">
+      <header>
+        <h1 class="title">{{individualEvent.sport.name}}</h1>
+        <span class="colorCat">Индивидуальное занятие</span>
+      </header>
+      <article>
+        <h5>Описание</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          <br>Тренер: {{individualEvent.coach.name}} {{individualEvent.coach.surname}}
+        </p>
+      </article>
+      <div class="footer">
+        <button id="subscribe" type="button" *ngIf="role=='Client' && !isInEvent" (click)="enterEvent()">
+          <span>Записаться</span>
+        </button>
+        <button id="unsubscribe" type="button" *ngIf="role=='Client' && isInEvent" (click)="leaveEvent()">
+          <span>Отписаться</span>
+        </button>
+        <button id="unsubscribe" type="button" *ngIf="role=='Coach' && isInEvent" (click)="deleteEvent()">
+          <span>Удалить</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+<div id="calendar"></div>

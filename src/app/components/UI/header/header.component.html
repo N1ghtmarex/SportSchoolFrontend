@@ -1,0 +1,49 @@
+
+<header class="p-3 mb-3 border-bottom">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+      </a>
+
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="/" class="nav-link px-2 link-secondary">Главная</a></li>
+        <li><a *ngIf="userProfile" routerLink="sections/page/1" class="nav-link px-2 link-body-emphasis">Занятия</a></li>
+        <li><a *ngIf="userProfile" class="nav-link px-2 link-body-emphasis" (click)="goto('schedule')">Расписание</a></li>
+        <li><a *ngIf="role=='Coach'" routerLink="add-event" class="nav-link px-2 link-body-emphasis">Добавить занятие</a></li>
+        <li><a *ngIf="role=='Coach'" routerLink="sections/add" class="nav-link px-2 link-body-emphasis">Добавить секцию</a></li>
+        <li><a *ngIf="role=='Admin'" routerLink="admin" class="nav-link px-2 link-body-emphasis">Добавить тренера</a></li>
+      </ul>
+
+      <div class="dropdown text-end" *ngIf="userProfile">
+        <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="http://localhost:5092/users/{{id}}.jpeg" alt="mdo" width="32" height="32" class="rounded-circle">
+        </a>
+        <ul class="dropdown-menu text-small">
+          <li><a class="dropdown-item" routerLink="profile">Профиль</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" (click)="logout()">Выход</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 text-end" *ngIf="!userProfile">
+        <button type="button" class="btn btn-outline-primary me-2" (click)="login()">Вход</button>
+        <button type="button" class="btn btn-primary" routerLink="register">Регистрация</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!--
+<div id="header0" class="header-container">
+  <span class="logo" routerLink="/">SPORT.SCHOOL</span>
+  <span class="sections" routerLink="sections/page/1">Занятия</span>
+  <span class="schedule" (click)="goto('schedule')">Расписание</span>
+  <span class="add-event" *ngIf="role=='Coach'" routerLink="add-event">Добавить занятие</span>
+  <span class="add-event" *ngIf="role=='Coach'" routerLink="sections/add">Добавить секцию</span>
+  <span id="username" class="username" routerLink="profile"></span>
+  <img *ngIf="userProfile" src="http://localhost:5092/users/{{id}}.jpeg" class="avatar" routerLink="profile"/>
+  <span class="logout" (click)="logout()" *ngIf="userProfile != null">Выход</span>
+  <span class="logout" (click)="login()" *ngIf="userProfile == null">Войти</span>
+</div>
+-->

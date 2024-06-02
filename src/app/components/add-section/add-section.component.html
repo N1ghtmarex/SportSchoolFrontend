@@ -1,0 +1,62 @@
+<div class="container">
+    <h1>Добавление новой секции
+    </h1>
+    <div class="avatar-upload">
+        <div class="avatar-edit">
+            <input type='file' id="imageUpload" class="imageUpload" accept=".png, .jpg, .jpeg" (change)="initImage($event)"/>
+            <label for="imageUpload"></label>
+        </div>
+        <div class="avatar-preview">
+            <div id="imagePreview" class="imagePreview" style="background-image: url(https://www.bearing-spb.ru/cache/nophoto.6e5f614a.jpg);">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="field">
+        <form class="example-form">
+            <mat-form-field class="example-full-width" style="width: 220px;">
+              <mat-label>Название секции</mat-label>
+              <input matInput [(ngModel)]="sectionName" name="sectionName">
+            </mat-form-field>
+        </form>
+    </div>
+
+    <div class="field">
+        <form class="example-form">
+            <mat-form-field class="example-full-width" style="width: 220px;">
+              <mat-label>Описание</mat-label>
+              <textarea style="height: 195px;" maxlength="150" matInput name="desctiption" [(ngModel)]="description"></textarea>
+              <mat-hint align="end">{{description.length}}/150</mat-hint>
+            </mat-form-field>
+        </form>
+    </div>
+
+    <div class="field">
+        <mat-form-field style="width: 220px;">
+            <mat-label>Вид спорта</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let sport of sports" [value]="sport.name" (click)="sportId = sport.id">
+                    {{sport.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="field">
+        <mat-form-field style="width: 220px;">
+            <mat-label>Зал</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let room of rooms" [value]="room.name" (click)="roomId = room.id">
+                    {{room.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    
+    <div class="field">
+        <button (click)="addSection()" mat-raised-button color="primary" style="width: 220px;">Добавить</button>
+    </div>
+
+

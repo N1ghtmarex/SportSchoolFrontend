@@ -1,0 +1,47 @@
+<div class="banner">
+    <img src="/assets/images/base/banner.png">
+   
+    <div class="text-container">
+        <h1 class="header">SPORT.SCHOOL</h1>
+        <p class="body">Секции, доступные каждому</p>
+    </div>
+
+    <div class="banner-button">
+        <div id="btn" class="register" routerLink="register">Зарегистрироваться</div>
+    </div>
+</div>
+
+<div class="adv-header">Наши достоинства</div>
+<div class="advantages">
+    <div class="comfort">
+        <img src="/assets/images/base/comfort.png">
+        <div class="content">
+            <h3>Удобство</h3>
+            <p>Наши залы имеют современное оборудование, интерьер помещений спроектирован таким образом, чтобы поддерживать комфортный рабочий настрой</p>
+        </div>
+    </div>
+    <div class="vertical-line"></div>
+    <div class="safety">
+        <img src="/assets/images/base/safety.png">
+        <div class="content">
+            <h3>Безопасность</h3>
+            <p>Все рабочие помещения и оборудование регулярно обслуживаются, а также проходят проверку на соответствие нормам безопасности</p>
+        </div>
+    </div>
+    <div class="vertical-line"></div>
+    <div class="quality">
+        <img src="/assets/images/base/quality.png">
+        <div class="content">
+            <h3>Качество</h3>
+            <p>В нашей компании работают высококвалифицированные тренеры, которые найдут к вам индивидуальный подход</p>
+        </div>
+    </div>
+</div>
+
+<div class="trainers-header">Тренерский состав</div>
+
+<swiper-container [slidesPerView]="3" [navigation]="true" [css-mode]="true" [loop]="true">
+    <ng-container *ngFor="let coach of coachs">
+      <swiper-slide (click)="openDialog(coach)"><img class="coach-image" src={{coach.imageUrl}}></swiper-slide>
+    </ng-container>
+</swiper-container>

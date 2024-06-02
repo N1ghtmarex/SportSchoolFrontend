@@ -1,0 +1,30 @@
+header {
+  background-color: #0e0035;
+  margin-bottom: 0 !important;
+}
+
+.nav a {
+  color: white !important;
+  cursor: pointer;
+  user-select: none;
+  }
+  .nav a:hover {
+    background-color: #1e1636;
+  }
+
+  .nav a:focus {
+    background-color: #0e0035;
+  }
+  
+  .text-small {
+    font-size: 85%;
+  }
+  
+  .dropdown-toggle:not(:focus), .dropdown-toggle:focus {
+    color: white !important;
+    outline: 0;
+  }
+  
+button {
+    font-size: 1.2rem;
+  }

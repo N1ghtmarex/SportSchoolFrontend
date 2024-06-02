@@ -1,0 +1,234 @@
+<!--
+<div class="container">
+    <div class="avatar-upload">
+        <div class="avatar-edit">
+            <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" (change)="initImage($event)"/>
+            <label for="imageUpload"></label>
+        </div>
+        <div class="avatar-preview">
+            <div id="imagePreview" [style]="'background-image: url('+ pic + ');'">
+            </div>
+        </div>
+    </div>
+    <div *ngIf="client || coach" class="user-data">
+        <div class="field">
+            <form class="example-form">
+                <mat-form-field class="example-full-width">
+                <mat-label>Имя</mat-label>
+                <input matInput name="name" *ngIf="client" [(ngModel)]="client.name">
+                <input matInput name="name" *ngIf="coach" [(ngModel)]="coach.name">
+                </mat-form-field>
+            </form>
+        </div>
+
+        <div class="field">
+            <form class="example-form">
+                <mat-form-field class="example-full-width">
+                <mat-label>Фамилия</mat-label>
+                <input matInput name="surname" *ngIf="client" [(ngModel)]="client.surname">
+                <input matInput name="surname" *ngIf="coach" [(ngModel)]="coach.surname">
+                </mat-form-field>
+            </form>
+        </div>
+
+        <div class="field">
+            <form class="example-form">
+                <mat-form-field class="example-full-width">
+                <mat-label>Контактный телефон</mat-label>
+                <input matInput *ngIf="client" prefix="+7" mask="(000) 000-00-00" [showMaskTyped]="true" class="phone" id="phone" name="phone" placeHolderCharacter="*" [(ngModel)]="client.phone">
+                <input matInput *ngIf="coach" prefix="+7" mask="(000) 000-00-00" [showMaskTyped]="true" class="phone" id="phone" name="phone" placeHolderCharacter="*" [(ngModel)]="coach.phone">
+                </mat-form-field>
+            </form>
+        </div>
+
+        <div class="field" *ngIf="coach">
+            <form class="example-form">
+                <mat-form-field class="example-full-width">
+                <mat-label>Учебное заведение</mat-label>
+                <input matInput name="institution" *ngIf="coach" [(ngModel)]="coach.institution">
+                </mat-form-field>
+            </form>
+        </div>
+        <div class="field" *ngIf="coach">
+            <form class="example-form">
+                <mat-form-field class="example-full-width">
+                <mat-label>Факультет</mat-label>
+                <input matInput name="faculty" *ngIf="coach" [(ngModel)]="coach.faculty">
+                </mat-form-field>
+            </form>
+        </div>
+        <div class="field" *ngIf="coach">
+            <form class="example-form">
+                <mat-form-field class="example-full-width">
+                <mat-label>Специальность</mat-label>
+                <input matInput name="speciality" *ngIf="coach" [(ngModel)]="coach.speciality">
+                </mat-form-field>
+            </form>
+        </div>
+        <div class="field" *ngIf="coach">
+            <form class="example-form">
+                <mat-form-field class="example-full-width">
+                <mat-label>Форма обучения</mat-label>
+                <input matInput name="educationForm" *ngIf="coach" [(ngModel)]="coach.educationForm">
+                </mat-form-field>
+            </form>
+        </div>
+        <div class="field" *ngIf="coach">
+            <form class="example-form">
+                <mat-form-field class="example-full-width">
+                <mat-label>Квалификация</mat-label>
+                <input matInput name="qualification" *ngIf="coach" [(ngModel)]="coach.qualification">
+                </mat-form-field>
+            </form>
+        </div>
+        <div class="field" *ngIf="coach">
+            <form class="example-form">
+                <mat-form-field class="example-full-width">
+                <mat-label>Место работы</mat-label>
+                <input matInput name="job" *ngIf="coach" [(ngModel)]="coach.job">
+                </mat-form-field>
+            </form>
+        </div>
+        <div class="field" *ngIf="coach">
+            <form class="example-form">
+                <mat-form-field class="example-full-width">
+                <mat-label>Должность</mat-label>
+                <input matInput name="jobTitle" *ngIf="coach" [(ngModel)]="coach.jobTitle">
+                </mat-form-field>
+            </form>
+        </div>
+        <div class="field" *ngIf="coach">
+            <form class="example-form">
+                <mat-form-field class="example-full-width">
+                <mat-label>Период работы</mat-label>
+                <input matInput name="jobPeriod" *ngIf="coach" [(ngModel)]="coach.jobPeriod">
+                </mat-form-field>
+            </form>
+        </div>
+
+        <button mat-raised-button color="primary" class="save" (click)="save()">Сохранить</button>
+    </div>
+</div>
+-->
+<div class="container">
+    <div class="row gutters">
+    <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+    <div class="card h-100">
+        <div class="card-body">
+            <div class="account-settings">
+                <div class="user-profile">
+                    <div class="avatar-upload">
+                        <div class="avatar-edit">
+                            <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" (change)="initImage($event)"/>
+                            <label for="imageUpload"></label>
+                        </div>
+                        <div class="avatar-preview">
+                            <div id="imagePreview" [style]="'background-image: url('+ pic + ');'">
+                            </div>
+                        </div>
+                    </div>
+                    <h5 class="user-name">{{name}} {{surname}}</h5>
+                    <h6 class="user-phone">+7{{phone}}</h6>
+                </div>
+                <div class="about">
+                    <h5>About</h5>
+                    <p>I'm Yuki. Full Stack Designer I enjoy creating user-centric, delightful and human experiences.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+    <div class="card h-100">
+        <div class="card-body">
+            <div class="row gutters">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <h6 class="mb-2 text-primary">Персональная информация</h6>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="userName">Имя</label>
+                        <input *ngIf="coach" type="text" class="form-control" id="userName" placeholder="Введите имя" [(ngModel)]="coach.name">
+                        <input *ngIf="client" type="text" class="form-control" id="userName" placeholder="Введите имя" [(ngModel)]="client.name">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="userSurname">Фамилия</label>
+                        <input *ngIf="coach" type="text" class="form-control" id="userSurname" placeholder="Введите фамилию" [(ngModel)]="coach.surname">
+                        <input *ngIf="client" type="text" class="form-control" id="userSurname" placeholder="Введите фамилию" [(ngModel)]="client.surname">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input *ngIf="coach" type="text" class="form-control" id="phone" prefix="+7" mask="(000) 000-00-00" [showMaskTyped]="true" [(ngModel)]="coach.phone">
+                        <input *ngIf="client" type="text" class="form-control" id="phone" prefix="+7" mask="(000) 000-00-00" [showMaskTyped]="true" [(ngModel)]="client.phone">
+                    </div>
+                </div>
+            </div>
+            <div class="row gutters" *ngIf="coach">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <h6 class="mt-3 mb-2 text-primary">Образование</h6>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="institution">Учебное заведение</label>
+                        <input type="text" class="form-control" id="institution" placeholder="Учебное заведение" [(ngModel)]="coach.institution">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="faculty">Факультет</label>
+                        <input type="text" class="form-control" id="faculty" placeholder="Факультет" [(ngModel)]="coach.faculty">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="eduForm">Форма обучения</label>
+                        <input type="text" class="form-control" id="eduForm" placeholder="Форма обучения" [(ngModel)]="coach.educationForm">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="qualification">Квалификация</label>
+                        <input type="text" class="form-control" id="qualification" placeholder="Квалификация" [(ngModel)]="coach.qualification">
+                    </div>
+                </div>
+            </div>
+            <div class="row gutters" *ngIf="coach">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <h6 class="mt-3 mb-2 text-primary">Карьера</h6>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="job">Место работы</label>
+                        <input type="name" class="form-control" id="job" placeholder="Место работы" [(ngModel)]="coach.job">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="jobTitle">Должность</label>
+                        <input type="name" class="form-control" id="jobTitle" placeholder="Должность" [(ngModel)]="coach.jobTitle">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="jobPeriod">Период</label>
+                        <input type="text" class="form-control" id="jobPeriod" placeholder="Период работы" [(ngModel)]="coach.jobPeriod">
+                    </div>
+                </div>
+            </div>
+            <div class="btns">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="text-right">
+                        <button type="button" id="submit" name="submit" class="btn btn-secondary" (click)="cancel()">Сбросить</button>
+                        <button type="button" id="submit" name="submit" class="btn btn-primary" (click)="save()">Обновить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>

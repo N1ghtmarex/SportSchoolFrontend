@@ -1,0 +1,28 @@
+<div><img class="avatar" src={{data.imageUrl}}></div>
+<div class="info">
+    <p class="name">{{data.name}} {{data.surname}}</p>
+    <p class="specialization">преподаватель по теннису (хардкод, не придумал)</p>
+</div>
+<div class="tabs">
+    <mat-tab-group animationDuration="0ms">
+        <mat-tab label="Образование">
+            <div class="education">
+                <p>{{data.institution}}
+                    <br>Факультет: {{data.faculty}}<br>Специальность: {{data.speciality}}<br>Форма обучения: {{data.educationForm}}<br>Квалификация: {{data.qualification}}</p>
+            </div>
+        </mat-tab>
+        <mat-tab label="Опыт работы">
+            <div class="job">
+                <p>{{data.job}}<br>{{data.jobTitle}}<br>{{data.jobPeriod}}</p>
+            </div>
+        </mat-tab>
+        <mat-tab label="Достижения">
+            <div class="achievements">
+                <p>Игрок года, 2010<br>Пара года, 2012<br>Артур Эш. За гуманизм, 2014<br>Крис Эрвет. Первая ракетка мира, 2019</p>
+            </div>
+        </mat-tab>
+      </mat-tab-group>
+</div>
+
+
+<button class="close" [mat-dialog-close]="true"></button>

@@ -1,0 +1,45 @@
+.avatar {
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.name,
+.specialization {
+    position: absolute;
+    top: 30px;
+    left: 290px;
+}
+
+.name {
+    font-size: 18pt;
+}
+
+.specialization {
+    font-size: 12pt;
+    margin-top: 40px;
+}
+
+.education,
+.job,
+.achievements {
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 12pt;
+    line-height: 2;
+}
+
+.close {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 845px;
+    background: url(/assets/images/base/close.png) no-repeat;
+    background-size: cover;
+    border: none;
+    top: 30px;
+}
+
