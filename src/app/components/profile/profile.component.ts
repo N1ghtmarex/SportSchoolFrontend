@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { ICoach } from '../../models/coach';
 import { CoachService } from '../../services/coach.service';
+import { serverUrl } from '../../environments/dev';
 
 @Component({
   selector: 'app-profile',
@@ -40,7 +41,6 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.keycloakService.getUserProfile().then((data: any) => {
-      this.pic = `http://localhost:5092/users/${data.id}.jpeg`;
 
       if (this.keycloakService.getUserRoles().includes("Coach")) {
         this.role = "Coach";
@@ -55,6 +55,7 @@ export class ProfileComponent implements OnInit {
           this.name = this.client.name;
           this.surname = this.client.surname;
           this.phone = this.client.phone;
+          this.pic = `${serverUrl}/users/${any.imageFileName}`;
         });
       }
       if (this.role == "Coach") {
@@ -63,6 +64,7 @@ export class ProfileComponent implements OnInit {
           this.name = this.coach.name;
           this.surname = this.coach.surname;
           this.phone = this.coach.phone;
+          this.pic = `${serverUrl}/users/${any.imageFileName}`;
         })
       }
     })

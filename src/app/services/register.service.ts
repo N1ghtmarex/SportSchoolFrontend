@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { serverUrl } from '../environments/dev';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +28,7 @@ export class RegisterService {
     formData.append('Body.name', name);
     formData.append('Body.surname', surname);
 
-    return this.http.post("http://localhost:5092/api/admin/register", formData);
+    return this.http.post(`${serverUrl}/api/admin/register`, formData);
   }
   
 }

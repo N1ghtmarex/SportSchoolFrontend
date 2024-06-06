@@ -2,6 +2,7 @@ import { Time } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { serverUrl } from '../environments/dev';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class SectionEventService {
     private http: HttpClient
   ) { }
 
-  url = "http://localhost:5092/api/admin/section-event/";
+  url = `${serverUrl}/api/admin/section-event/`;
 
   getSectionEvents(sectionId: string): Observable<any> {
     return this.http.get(this.url + sectionId);

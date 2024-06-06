@@ -3,5 +3,6 @@ export interface IClient {
     externalId: string,
     name: string,
     surname: string,
-    phone: string
+    phone: string,
+    imageFileName: string
 }

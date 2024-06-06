@@ -7,6 +7,8 @@ import { RouterModule } from '@angular/router';
 import { ICoach } from '../../models/coach';
 import { CoachService } from '../../services/coach.service';
 import { CommonModule } from '@angular/common';
+import { serverUrl } from '../../environments/dev';
+
 
 
 register();
@@ -33,12 +35,7 @@ export class BaseComponent implements OnInit {
 
   ngOnInit(): void {
     this.coachService.getCoachsList().subscribe(any => {
-      this.coachs = any.items;
-      
-      this.coachs.forEach(element => {
-        element.imageUrl = `http://localhost:5092/users/${element.externalId}.jpeg`
-      });
-      
+      this.coachs = any.items;      
     })
 
     var btn = document.getElementById('btn');

@@ -1,10 +1,11 @@
 import { KeycloakService } from 'keycloak-angular';
+import { keycloakUrl } from '../environments/dev';
 
 export function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
     keycloak.init({
       config: {
-        url: 'http://158.160.130.4:8080',
+        url: keycloakUrl,
         realm: 'SportSchool',
         clientId: 'SwaggerClient',
       },

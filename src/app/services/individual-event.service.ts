@@ -2,12 +2,13 @@ import { Time } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { serverUrl } from '../environments/dev';
 
 @Injectable({
   providedIn: 'root'
 })
 export class IndividualEventService {
-  url = "http://localhost:5092/api/admin/individual-event/";
+  url = `${serverUrl}/api/admin/individual-event/`;
 
   constructor(
     private http: HttpClient

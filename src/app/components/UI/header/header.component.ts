@@ -3,6 +3,10 @@ import { MatDialog } from '@angular/material/dialog';
 import { HttpClient } from '@angular/common/http';
 import { AddEventDialogComponent } from '../../add-event-dialog/add-event-dialog.component';
 import { KeycloakOperationService } from '../../../services/keycloak.service';
+import { ClientService } from '../../../services/client.service';
+import { IClient } from '../../../models/client';
+import { CoachService } from '../../../services/coach.service';
+import { ICoach } from '../../../models/coach';
 
 @Component({
   selector: 'app-header',
@@ -18,11 +22,16 @@ export class HeaderComponent implements OnInit {
   patronymic!: any
   userProfile: any | null = null;
   id!: string;
+  client!: IClient;
+  coach!: ICoach;
 
   constructor(
     public dialog: MatDialog,
     private http: HttpClient,
-    private keycloakService: KeycloakOperationService) {
+    private keycloakService: KeycloakOperationService,
+    private clientService: ClientService,
+    private coachService: CoachService
+  ) {
     
   }
 
@@ -31,15 +40,21 @@ export class HeaderComponent implements OnInit {
       this.keycloakService.getUserProfile().then((data: any) => {
         this.userProfile = data;
         console.table(this.userProfile);
-        this.id = this.userProfile.id;
+        
         if (this.keycloakService.getUserRoles().includes("Coach")) {
           this.role = "Coach";
+          this.coachService.getCoach(data.id).subscribe(any => {
+            this.coach = any;
+          })
         }
         else if (this.keycloakService.getUserRoles().includes("Admin")){
           this.role = "Admin";
         }
         else {
           this.role = "Client";
+          this.clientService.getClient(this.userProfile.id).subscribe(any => {
+            this.client = any;
+          })
         }
 
         var name = document.getElementById('username')

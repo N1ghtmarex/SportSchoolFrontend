@@ -1,5 +1,5 @@
 export interface ICoach {
-    imageUrl: string,
+    imageFileName: string,
     id: string,
     externalId: string,
     name: string,

@@ -1,0 +1,1 @@
+function readURL(e){if(e.files&&e.files[0]){var a=new FileReader;a.onload=function(i){$("#imagePreview").css("background-image","url("+i.target.result+")"),$("#imagePreview").hide(),$("#imagePreview").fadeIn(650)},a.readAsDataURL(e.files[0])}}$("#imageUpload").change(function(){readURL(this)}),jQuery(function(e){e(".phone").mask("+7(000)000-00-00")});

@@ -73,7 +73,7 @@ export class AddSectionComponent implements OnInit {
     }))
     .subscribe((data) => {
       this.dialog.open(AlertComponent, { data: {
-        msgType: "Ошибка!",
+        msgType: "Успешно!",
         msg: "Секция добавлена!"
       }}).afterClosed().subscribe(() => {
         window.location.reload();

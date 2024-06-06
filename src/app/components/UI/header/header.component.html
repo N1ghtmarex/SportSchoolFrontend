@@ -17,7 +17,8 @@
 
       <div class="dropdown text-end" *ngIf="userProfile">
         <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="http://localhost:5092/users/{{id}}.jpeg" alt="mdo" width="32" height="32" class="rounded-circle">
+          <img *ngIf="client" src="http://localhost:5092/users/{{client.imageFileName}}" alt="mdo" width="32" height="32" class="rounded-circle">
+          <img *ngIf="coach" src="http://localhost:5092/users/{{coach.imageFileName}}" alt="mdo" width="32" height="32" class="rounded-circle">
         </a>
         <ul class="dropdown-menu text-small">
           <li><a class="dropdown-item" routerLink="profile">Профиль</a></li>

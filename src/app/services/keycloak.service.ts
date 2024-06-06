@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { KeycloakService } from 'keycloak-angular';
 import { Observable } from 'rxjs';
+import { frontendUrl } from '../environments/dev';
 
 @Injectable({ providedIn: 'root' })
 export class KeycloakOperationService {
@@ -10,7 +11,7 @@ export class KeycloakOperationService {
     return this.keycloak.isLoggedIn();
   }
   logout(): void {
-    this.keycloak.logout(window.location.href = 'http://localhost:4200/');
+    this.keycloak.logout(window.location.href = frontendUrl);
   }
   login(): Promise<void> {
     return this.keycloak.login();
@@ -21,13 +22,7 @@ export class KeycloakOperationService {
   getUserRoles(): any {
     return this.keycloak.getUserRoles();
   }
-  register(): any {
-    return this.keycloak.register({
-      redirectUri: "http://localhost:4200/registered"
-    });
-  }
   getToken(): any {
     return this.keycloak.getToken();
   }
-  // Add other methods as needed for token access, user info retrieval, etc.}
 }

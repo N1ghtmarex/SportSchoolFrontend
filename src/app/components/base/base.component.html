@@ -42,6 +42,6 @@
 
 <swiper-container [slidesPerView]="3" [navigation]="true" [css-mode]="true" [loop]="true">
     <ng-container *ngFor="let coach of coachs">
-      <swiper-slide (click)="openDialog(coach)"><img class="coach-image" src={{coach.imageUrl}}></swiper-slide>
+      <swiper-slide (click)="openDialog(coach)"><img class="coach-image" src='http://localhost:5092/users/{{coach.imageFileName}}'></swiper-slide>
     </ng-container>
 </swiper-container>

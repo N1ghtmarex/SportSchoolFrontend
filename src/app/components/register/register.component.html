@@ -1,7 +1,7 @@
 <div class="form_wrapper">
     <div class="form_container">
       <div class="title_container">
-        <h2>Responsive Registration Form</h2>
+        <h2>Регистрация</h2>
       </div>
       <div class="row clearfix">
         <div class="">
@@ -17,13 +17,13 @@
               </div>
             </div>
             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-              <input type="email" name="email" placeholder="Email" required [(ngModel)]="email"/>
+              <input type="email" name="email" placeholder="Электронная почта" required [(ngModel)]="email"/>
             </div>
             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-              <input type="password" name="password" placeholder="Password" [(ngModel)]="password" required />
+              <input type="password" name="password" placeholder="Пароль" [(ngModel)]="password" required />
             </div>
             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-              <input type="password" name="password" placeholder="Re-type Password" [(ngModel)]="retypePassword" required />
+              <input type="password" name="password" placeholder="Повторите пароль" [(ngModel)]="retypePassword" required />
             </div>
             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-phone"></i></span>
                 <input type="text" prefix="+7" mask="(000) 000-00-00" [showMaskTyped]="true" class="phone" id="phone" name="phone" placeHolderCharacter="*" [(ngModel)]="phone" required />
@@ -31,19 +31,19 @@
             <div class="row clearfix">
               <div class="col_half">
                 <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                  <input type="text" name="name" placeholder="First Name" [(ngModel)]="name" required/>
+                  <input type="text" name="name" placeholder="Имя" [(ngModel)]="name" required/>
                 </div>
               </div>
               <div class="col_half">
                 <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                  <input type="text" name="name" placeholder="Last Name" [(ngModel)]="surname" required />
+                  <input type="text" name="name" placeholder="Фамилия" [(ngModel)]="surname" required />
                 </div>
               </div>
             </div>
                   
               
               
-            <input class="button" type="submit" value="Register" (click)="register()"/>
+            <input class="button" type="submit" value="Зарегистрироваться" (click)="register()"/>
           </form>
         </div>
       </div>

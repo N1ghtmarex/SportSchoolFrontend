@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ICoach } from '../models/coach';
+import { serverUrl } from '../environments/dev';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class CoachService {
     private http: HttpClient
   ) { }
 
-  url = "http://localhost:5092/api/admin/coachs";
+  url = `${serverUrl}/api/admin/coachs`;
 
   createCoach(
     externalId: string,

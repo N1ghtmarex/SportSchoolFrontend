@@ -2,6 +2,7 @@ import { ɵnormalizeQueryParams } from '@angular/common';
 import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError } from 'rxjs';
+import { serverUrl } from '../environments/dev';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +11,8 @@ export class SectionService {
 
   constructor(private http: HttpClient) { }
 
-  sectionUrl = "http://localhost:5092/api/admin/sections"
-  sectionEventUrl = "http://localhost:5092/api/admin/section-event"
+  sectionUrl = `${serverUrl}/api/admin/sections`
+  sectionEventUrl = `${serverUrl}/api/admin/section-event`
 
   addSection(
     image: File, 

@@ -13,7 +13,6 @@ export const sectionResolver: ResolveFn<ISection> = (
 
   return sectionService.getSection(route.params?.['id']).pipe(
     catchError(() => {
-      console.log("YA PIDOR")
       return EMPTY;
     })
   );
